@@ -16,3 +16,11 @@ Node is utilised as the backend of the project which facilitates the use of fire
 In order to test the API functionality, created with the use of Firebase cloud functions, Postman is utilised. It's a tool that lets developers interact and test the APIs to accertain the expected behaviour of any API.
 
 ## Installation
+
+1. Install Node from (https://nodejs.org/en).
+2. Install Firebase globally on the local machine using the command `npm install -g firebase-tools`.
+3. Log in into Firebase by executing the command `firebase login`.
+4. Initialize a Firebase project on the Firebase console and get the project ID.
+5. Initialize a Firebase project in the directory by using the command `firebase init` providing the project ID when asked.
+
+
