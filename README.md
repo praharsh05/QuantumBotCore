@@ -22,5 +22,18 @@ In order to test the API functionality, created with the use of Firebase cloud f
 3. Log in into Firebase by executing the command `firebase login`.
 4. Initialize a Firebase project on the Firebase console and get the project ID.
 5. Initialize a Firebase project in the directory by using the command `firebase init` providing the project ID when asked.
+6. Install Firebase admin by running the command `npm install firebase-admin`.
+
+## Code Structure and Organisation
+There are two main files which are needed to build the functionality of QuantumBot chat application.
+
+1. `addMessage.js`
+2. `index.js`
+
+The cloud function is coded in the file `addMessage.js` which is present in the `api` folder. This file defines how the server should respond to requests sent to it using the API. It starts with validating the required fields that should be present in the body of the API, which are `text` and `userId`. If these two fields are not present then the API will return a bad request error and log that required fields and missing.
+if the fields are present, the message data is constructed with the `text`, `userId`, and `timestamp` of the message.
+Once the message data is contructed the message is added to the Firestore database under the user's message collection. When the function is successfully able to add the message under the registered user's message collection a success message returned with the new `messageId`. If an error occurs while adding the message, an error message is returned.
+
+`index.js` is the entry point which specifies what modules are to be used. This file first intialises the `firebase-admin` and then exports the `addMessage.js` to the cloud for deployment.
 
 
