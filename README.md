@@ -36,4 +36,13 @@ Once the message data is contructed the message is added to the Firestore databa
 
 `index.js` is the entry point which specifies what modules are to be used. This file first intialises the `firebase-admin` and then exports the `addMessage.js` to the cloud for deployment.
 
+## Implementation
+In order to implement QuantumBot Chat follow the following steps:
+1. Clone the repository
+2. Follow the installation.
+3. Install all the dependencies by running `npm install package.json`.
+4. Create a Firestore Database on the Firebase console.
+5. Initialize Firebase by running `firebase init` command and selecting Firestore and Functions.
+6. Deploy the firebase function using the `firebase deploy --only functions` command.
+7. Validate the functioning of the API using Postman.
 
